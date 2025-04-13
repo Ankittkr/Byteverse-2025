@@ -1,7 +1,24 @@
 import React from 'react';
 import './Footer.css';
-
+import { Link } from 'react-router-dom'; 
 const Footer = () => {
+    async function genearateAnswer(){
+        
+        const response = await axios({
+            url:"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDz7jCGn0BarH6bPzSK9n9999PU_vAn_Tw",
+            method:"POST",
+            data : {
+                "contents": [
+                {
+                  "parts":[{"text": "Explain how AI works"}]
+                  }
+                ]
+                 }
+        })
+        console.log(response.data);
+        console.log(response.data.generatedContents[0].parts[0].text);
+        
+    }
   return (
     <footer>
       <div className="cta">
@@ -23,25 +40,24 @@ const Footer = () => {
         <div>
           <h4 className='head'>Explore</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About </a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/About">About </Link></li>
+            <li><Link to="/Login">Login</Link></li>
+            <li><Link to="/Contact">Contact</Link></li>
           </ul>
         </div>
         <div>
         <h4 className='head'>Services</h4>
           <ul>
-            <li><a href="#">Symptom Checker</a></li>
-            <li><a href="#">Find  Doctors </a></li>
-            <li><a href="#">Mental Health</a></li>
-            
+            <li><Link to="/">Symptom Checker</Link></li>
+            <li><Link to="/DoctorFinding">Find  Doctors </Link></li>
+            <li><Link to="https://open.spotify.com/#login">Mental Health</Link></li>
           </ul>
 
         </div>
         <div className="footer-social">
           <h4 className='head follow'>Follow Us</h4>
-          <a href="#">Twitter</a>  <a href="#">LinkedIn</a>  <a href="#">Instagram</a>
+          <a href="https://www.facebook.com/login/">Facebook</a>  <a href="https://in.linkedin.com/">LinkedIn</a>  <a href="https://www.instagram.com/">Instagram</a>
         </div>
       </div>
 

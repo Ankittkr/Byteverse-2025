@@ -1,6 +1,6 @@
 import React from 'react'; 
 import './DoctorFinding.css';
-
+import { Link } from 'react-router-dom'; 
 const doctors = [
   {
     name: 'Dr. Aarti Sharma',
@@ -38,9 +38,10 @@ const doctors = [
 ;
 
 export const DoctorCard = ({ doctor }) => (
-
   <div className="doctor-card">
-    <div className="doctor-avatar" />
+    <div className="doctor-avatar">
+      <img src="https://cdn-icons-png.flaticon.com/512/9193/9193824.png" alt={`${doctor.name}`} style={{height:"60px"}}/>
+    </div>
     <div className="doctor-info">
       <h3>{doctor.name}</h3>
       <p>{doctor.specialization}</p>
@@ -58,27 +59,28 @@ export const DoctorCard = ({ doctor }) => (
     </div>
   </div>
 );
-export default function DoctorFinder() { return ( <div className="finder-page">
-   <aside className="sidebar"> 
-      <h2 className="logo">HealthMentor</h2>
+export default function DoctorFinder() { return ( 
+<div className="finder-page">
+   <aside className="sidebar" style={{backgroundColor:"#333"}}> 
+      <h2 className="logo" style={{color:"#1eb2a6"}}>HealthMentor</h2>
       <nav> 
         <ul> 
-          <li>Home</li> 
-          <li>Symptom Checker</li> 
-          <li className="active">Find Doctors</li> 
-          <li>Saved</li>
-          <li>Profile</li> 
+          <li><Link to="/" style={{color:"white",textDecoration:"none",padding:"20px"}}>Home</Link> </li>
+          <li><Link to="/About" style={{color:"white",textDecoration:"none",padding:"20px"}}>About</Link> </li>
+          <li className="active"><Link  to="/DoctorFinding" style={{color:"white",textDecoration:"none",padding:"20px"}}>Find Doctors</Link> </li>
+          <li><Link to="/Contact" style={{color:"white",textDecoration:"none",padding:"20px"}}>Contact Us</Link></li>
+          <li><Link to="/Dashboard" style={{color:"white",textDecoration:"none",padding:"20px"}}>Dashboard</Link> </li>
         </ul> 
       </nav> 
-</aside>
+  </aside>
 
 <main className="main-content">
     <h1>Find Doctors</h1>
     <div className="filters">
       <input className="search-bar" type="text" placeholder="Search by specialty or name" />
       <select>
-        <option>New York, NY</option>
-        <option>Los Angeles, CA</option>
+        <option>Patna , Bihar</option>
+        <option>Samastipur , Bihar</option>
       </select>
       <select>
         <option>Within 5 miles</option>

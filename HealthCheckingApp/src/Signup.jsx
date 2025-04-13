@@ -1,10 +1,10 @@
 import React from "react";
-import "./Login.css";
+import "./Signup.css";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-export default function Login() {
+export default function Signup() {
   return (
-    <div className="login-page">
+    <div className="Signup-page">
       <div className="left-panel">
         <img
           src="https://cdn-icons-png.flaticon.com/512/3302/3302245.png"
@@ -14,7 +14,7 @@ export default function Login() {
         <h1 className="brand">HealthMentor</h1>
       </div>
       <div className="right-panel">
-        <h2 style={{textAlign:"center",fontSize:"2rem"}}>Login </h2>
+        <h2 style={{textAlign:"center"}}>Sign Up</h2>
 
         <button className="google-button">
         <FcGoogle />
@@ -27,17 +27,18 @@ export default function Login() {
           <hr />
         </div>
 
-        <form className="login-form">
+        <form className="Signup-form">
           <input type="text" placeholder="Name" />
           <div className="horizontal-inputs">
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
+            <input type="tel" placeholder="Phone Number.." />
           </div>
-          <button className="signup-btn" style={{fontWeight:"700"}}><Link to="/" style={{color:"white",textDecoration:"none"}}>Login</Link></button>
+          <button className="signup-btn" style={{fontWeight:"700"}}><Link to="/" style={{color:"white",textDecoration:"none"}}>Sign Up</Link></button>
         </form>
 
-        <p className="login-link">
-          Do you want to create an account? <a href="/Signup">SignUp</a>
+        <p className="Signup-link">
+          Already have an account? <a href="/Login">Login</a>
         </p>
       </div>
     </div>

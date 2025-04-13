@@ -1,0 +1,48 @@
+.about-page {
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0fdfa;
+    min-height: 100vh;
+  }
+  
+  .about-header {
+    text-align: center;
+    background: linear-gradient(to right, #14b8a6, #2dd4bf);
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+  }
+  .about-header h1{
+    color: #2b323d;
+  }
+  .about-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    color: #0f766e;
+  }
+  
+  .about-content section {
+    margin-bottom: 2rem;
+  }
+  
+  .about-content h2 {
+    margin-bottom: 0.5rem;
+    color: #045750;
+  }
+  
+  .about-content p,
+  .about-content ul {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .about-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+ #sh2{
+    color: #2b323d;
+  }
